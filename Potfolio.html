@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivin Varghese George | Data Analyst Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5; /* A light gray for the body background */
+        }
+        .section-container {
+            background-color: white;
+        }
+        body.dark-mode {
+            background-color: #1a1a1a;
+        }
+        body.dark-mode .section-container,
+        body.dark-mode nav,
+        body.dark-mode footer {
+            background-color: #121212;
+        }
+        body.dark-mode,
+        body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode p,
+        body.dark-mode a, body.dark-mode .nav-links a, body.dark-mode .icon {
+             color: #e0e0e0;
+        }
+        body.dark-mode .logo {
+            color: #e0e0e0;
+        }
+        body.dark-mode .hamburger-icon span {
+            background-color: white;
+        }
+         body.dark-mode .details-container,
+         body.dark-mode .article-container,
+         body.dark-mode .contact-info-upper-container {
+            background-color: #2a2a2a;
+            border-color: #444;
+         }
+         body.dark-mode .btn {
+            color: #e0e0e0;
+            border-color: #e0e0e0;
+         }
+        
+        .animated-text span {
+            position: relative;
+        }
+        .animated-text span::before {
+            content: "";
+            color: #535353;
+            animation: words 20s infinite;
+        }
+        .animated-text span::after {
+            content: "";
+            position: absolute;
+            width: calc(100% + 8px);
+            height: 100%;
+            background-color: #f5f5f5;
+            border-left: 2px solid #a0a0a0;
+            right: -8px;
+            animation: cursor .8s infinite, typing 20s steps(14) infinite;
+        }
+        body.dark-mode .animated-text span::after {
+             background-color: #1a1a1a;
+             border-left-color: #888;
+        }
+
+        @keyframes cursor {
+            to {
+                border-left: 2px solid #ff000000;
+            }
+        }
+        @keyframes words {
+            0%, 20% { content: "Data Analyst"; }
+            21%, 40% { content: "ML Enthusiast"; }
+            41%, 60% { content: "Python Developer"; }
+            61%, 80% { content: "QA Tester"; }
+            81%, 100% { content: "Data Analyst"; }
+        }
+        @keyframes typing {
+            10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% { width: 0; }
+            5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%, 100% { width: calc(100% + 8px); }
+        }
+
+        /* Hamburger menu animation */
+        .hamburger-icon.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger-icon.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-icon.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+    </style>
+</head>
+<body class="dark-mode">
+
+    <nav id="desktop-nav" class="hidden lg:block fixed top-0 left-0 right-0 z-50 bg-white dark:bg-[#121212] shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
+            <div class="logo text-2xl font-bold cursor-pointer" onclick="window.location.href='#'">Ivin Varghese George</div>
+            <ul class="nav-links flex gap-8 text-lg">
+                <li><a href="#about" class="hover:text-gray-500 hover:underline underline-offset-4">About</a></li>
+                <li><a href="#skills" class="hover:text-gray-500 hover:underline underline-offset-4">Skills</a></li>
+                <li><a href="#projects" class="hover:text-gray-500 hover:underline underline-offset-4">Projects</a></li>
+                <li><a href="#contact" class="hover:text-gray-500 hover:underline underline-offset-4">Contact</a></li>
+                <li>
+                    <svg id="theme-toggle" class="w-6 h-6 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav id="hamburger-nav" class="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white dark:bg-[#121212] shadow-md">
+         <div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
+            <div class="logo text-2xl font-bold">Ivin Varghese George</div>
+            <div class="hamburger-menu relative">
+                <div class="hamburger-icon cursor-pointer z-40" onclick="toggleMenu()">
+                    <span class="block w-8 h-0.5 bg-black dark:bg-white mb-1.5 transition-all duration-300"></span>
+                    <span class="block w-8 h-0.5 bg-black dark:bg-white mb-1.5 transition-all duration-300"></span>
+                    <span class="block w-8 h-0.5 bg-black dark:bg-white transition-all duration-300"></span>
+                </div>
+                <ul class="menu-links absolute top-full right-0 bg-white dark:bg-[#2a2a2a] w-fit list-none p-4 rounded-lg shadow-lg max-h-0 overflow-hidden transition-all duration-300 z-30">
+                    <li><a href="#about" onclick="toggleMenu()" class="block py-2 px-5 text-lg hover:bg-gray-200 dark:hover:bg-gray-700 rounded">About</a></li>
+                    <li><a href="#skills" onclick="toggleMenu()" class="block py-2 px-5 text-lg hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Skills</a></li>
+                    <li><a href="#projects" onclick="toggleMenu()" class="block py-2 px-5 text-lg hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Projects</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()" class="block py-2 px-5 text-lg hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <section id="profile" class="section-container min-h-[calc(100vh-5rem)] flex justify-center items-center py-16 px-8">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="flex justify-center">
+                    <img src="./assets/Imageme.jpg" alt="Ivin Varghese George profile picture" class="rounded-full h-80 w-80 lg:h-96 lg:w-96 object-cover"/>
+                </div>
+                <div class="text-center lg:text-left">
+                    <p class="font-semibold text-gray-500">Hello, I'm</p>
+                    <h1 class="text-5xl font-bold my-2">Ivin Varghese George</h1>
+                    <h2 class="text-3xl font-bold text-gray-600 animated-text"><span></span></h2>
+                    <div class="flex justify-center lg:justify-start gap-4 my-4">
+                        <button class="btn font-semibold py-3 px-6 rounded-full border-2 border-black hover:bg-black hover:text-white transition-all" onclick="window.open('./assets/resume.html')">Download CV</button>
+                        <button class="btn font-semibold py-3 px-6 rounded-full bg-black text-white hover:bg-gray-800 transition-all" onclick="location.href='#contact'">Contact Info</button>
+                    </div>
+                    <div id="socials-container" class="flex justify-center lg:justify-start gap-4">
+                        <a href="https://www.linkedin.com/in/ivin-varghese-george-aa0740363" target="_blank"><img src="https://img.icons8.com/ios-filled/50/a0a0a0/linkedin.png" alt="My LinkedIn profile" class="h-8 w-8 cursor-pointer"/></a>
+                        <a href="https://github.com/Ivin410" target="_blank"><img src="https://img.icons8.com/ios-filled/50/a0a0a0/github.png" alt="My Github profile" class="h-8 w-8 cursor-pointer"/></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section-container py-20 px-8">
+            <div class="max-w-5xl mx-auto text-center">
+                <p class="text-gray-500">Get To Know More</p>
+                <h1 class="text-5xl font-bold my-4">About Me</h1>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-12">
+                     <div class="flex justify-center">
+                        <img src="./assets/Profile.png" alt="Profile picture" class="rounded-3xl h-80 w-80 lg:h-96 lg:w-96 object-cover"/>
+                     </div>
+                     <div class="text-left">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
+                            <div class="details-container p-6 border-2 border-gray-400 rounded-3xl text-center">
+                                <img src="https://img.icons8.com/ios-glyphs/30/a0a0a0/medal.png" alt="Experience icon" class="h-8 w-8 mx-auto mb-2"/>
+                                <h3 class="text-xl font-semibold">Experience</h3>
+                                <p class="text-sm text-gray-400">Data Analyst Intern<br/>Smaartt Digital Consulting</p>
+                            </div>
+                            <div class="details-container p-6 border-2 border-gray-400 rounded-3xl text-center">
+                                 <img src="https://img.icons8.com/ios-glyphs/30/a0a0a0/education.png" alt="Education icon" class="h-8 w-8 mx-auto mb-2"/>
+                                 <h3 class="text-xl font-semibold">Education</h3>
+                                <p class="text-sm text-gray-400">M.Sc. Data Analytics<br />B.C.A. Computer Applications</p>
+                            </div>
+                        </div>
+                        <p class="text-lg text-gray-400 text-justify">
+                            I am a highly motivated and analytical MSc Data Analytics graduate with a strong foundation in statistical modeling, machine learning, and data visualization. My passion lies in diving deep into complex datasets to uncover hidden patterns and trends that drive strategic decision-making.
+                        </p>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section-container py-20 px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                 <p class="text-gray-500">Explore My</p>
+                <h1 class="text-5xl font-bold my-4">Skills</h1>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                    <div class="details-container p-6 border-2 border-gray-400 rounded-3xl">
+                        <h2 class="text-3xl font-semibold mb-6">Analysis & Visualization</h2>
+                        <div class="article-container grid grid-cols-2 gap-x-8 gap-y-4 text-left">
+                            <article class="flex gap-4"><img src="https://img.icons8.com/ios-glyphs/30/a0a0a0/checkmark--v1.png" alt="Checkmark icon" class="h-6 w-6"/><div><h3>Python</h3><p>Experienced</p></div></article>
+                            <article class="flex gap-4"><img src="https://img.icons8.com/ios-glyphs/30/a0a0a0/checkmark--v1.png" alt="Checkmark icon" class="h-6 w-6"/><div><h3>Power BI</h3><p>Experienced</p></div></article>
+                            <article class="flex gap-4"><img src="https://img.icons8.com/ios-glyphs/30/a0a0a0/checkmark--v1.png" alt="Checkmark icon" class="h-6 w-6"/><div><h3>Tableau</h3><p>Experienced</p></div></article>
+                            <article class="flex gap-4"><img src="https://img.icons8.com/ios-glyphs/30/a0a0a0/checkmark--v1.png" alt="Checkmark icon" class="h-6 w-6"/><div><h3>Pandas & Numpy</h3><p>Experienced</p></div></article>
+                            <article class="flex gap-4"><img src="https://img.icons8.com/ios-glyphs/30/a0a0a0/checkmark--v1.png" alt="Checkmark icon" class="h-6 w-6"/><div><h3>Scikit-learn</h3><p>Intermediate</p></div></article>
+                            <article class="flex gap-4"><img src="https://img.icons8.com/ios-glyphs/30/a0a0a0/checkmark--v1.png" alt="Checkmark icon" class="h-6 w-6"/><div><h3>Tensorflow</h3><p>Experienced</p></div></article>
+                        </div>
+                    </div>
+                    <div class="details-container p-6 border-2 border-gray-400 rounded-3xl">
+                        <h2 class="text-3xl font-semibold mb-6">Programming & Tools</h2>
+                        <div class="article-container grid grid-cols-2 gap-x-8 gap-y-4 text-left">
+                           <article class="flex gap-4"><img src="https://img.icons8.com/ios-glyphs/30/a0a0a0/checkmark--v1.png" alt="Checkmark icon" class="h-6 w-6"/><div><h3>SQL</h3><p>Experienced</p></div></article>
+                            <article class="flex gap-4"><img src="https://img.icons8.com/ios-glyphs/30/a0a0a0/checkmark--v1.png" alt="Checkmark icon" class="h-6 w-6"/><div><h3>Java</h3><p>Intermediate</p></div></article>
+                            <article class="flex gap-4"><img src="https://img.icons8.com/ios-glyphs/30/a0a0a0/checkmark--v1.png" alt="Checkmark icon" class="h-6 w-6"/><div><h3>Hadoop</h3><p>Basic</p></div></article>
+                            <article class="flex gap-4"><img src="https://img.icons8.com/ios-glyphs/30/a0a0a0/checkmark--v1.png" alt="Checkmark icon" class="h-6 w-6"/><div><h3>Git</h3><p>Experienced</p></div></article>
+                             <article class="flex gap-4"><img src="https://img.icons8.com/ios-glyphs/30/a0a0a0/checkmark--v1.png" alt="Checkmark icon" class="h-6 w-6"/><div><h3>HTML/CSS</h3><p>Experienced</p></div></article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section-container py-20 px-8">
+            <div class="max-w-6xl mx-auto text-center">
+                 <p class="text-gray-500">Browse My Recent</p>
+                <h1 class="text-5xl font-bold my-4">Projects</h1>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                    <div class="details-container p-8 border-2 border-gray-400 rounded-3xl text-center flex flex-col justify-between">
+                        <div>
+                            <img src="./assets/Live Climate Analysis.png" alt="Live Climate Analysis System Project" class="rounded-3xl mb-6 w-full"/>
+                            <h2 class="text-3xl font-semibold mb-6">Live Climate Analysis</h2>
+                        </div>
+                        <div class="flex justify-center gap-4">
+                            <button class="btn font-semibold py-3 px-6 rounded-full border-2 border-black hover:bg-black hover:text-white transition-all" onclick="window.open('https://github.com/Ivin410/Live-Climate-Analysis', '_blank')">Github</button>
+                        </div>
+                    </div>
+                     <div class="details-container p-8 border-2 border-gray-400 rounded-3xl text-center flex flex-col justify-between">
+                        <div>
+                            <img src="./assets/Live Trader.png" alt="Live Trader Project" class="rounded-3xl mb-6 w-full"/>
+                            <h2 class="text-3xl font-semibold mb-6">Live Trader</h2>
+                        </div>
+                        <div class="flex justify-center gap-4">
+                            <button class="btn font-semibold py-3 px-6 rounded-full border-2 border-black hover:bg-black hover:text-white transition-all" onclick="window.open('https://github.com/Ivin410/live-trader-starter', '_blank')">Github</button>
+                        </div>
+                    </div>
+                    <div class="details-container p-8 border-2 border-gray-400 rounded-3xl text-center flex flex-col justify-between">
+                        <div>
+                            <img src="./assets/Face.png" alt="Face Recognition System" class="rounded-3xl mb-6 w-full"/>
+                            <h2 class="text-3xl font-semibold mb-6">Face Recognition System</h2>
+                        </div>
+                        <div class="flex justify-center gap-4">
+                             <button class="btn font-semibold py-3 px-6 rounded-full border-2 border-black hover:bg-black hover:text-white transition-all" onclick="window.open('https://github.com/Ivin410/Face-Emotion', '_blank')">Github</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                    <div class="details-container p-8 border-2 border-gray-400 rounded-3xl text-center flex flex-col justify-between">
+                        <div>
+                            <img src="./assets/FiveM PC Registry Checker.png" alt="FiveM PC Registry Checker System Project" class="rounded-3xl mb-6 w-full"/>
+                            <h2 class="text-3xl font-semibold mb-6">FiveM PC Registry Checker</h2>
+                        </div>
+                        <div class="flex justify-center gap-4">
+                            <button class="btn font-semibold py-3 px-6 rounded-full border-2 border-black hover:bg-black hover:text-white transition-all" onclick="window.open('https://github.com/Ivin410/Fivem-Registry-Checker', '_blank')">Github</button>
+                        </div>
+                    </div>
+                     <div class="details-container p-8 border-2 border-gray-400 rounded-3xl text-center flex flex-col justify-between">
+                        <div>
+                            <img src="./assets/COVID-19-Dashboard.png" alt="COVID-19-Dashboard Project" class="rounded-3xl mb-6 w-full"/>
+                            <h2 class="text-3xl font-semibold mb-6">COVID-19 Dashboard</h2>
+                        </div>
+                        <div class="flex justify-center gap-4">
+                            <button class="btn font-semibold py-3 px-6 rounded-full border-2 border-black hover:bg-black hover:text-white transition-all" onclick="window.open('https://github.com/Ivin410/COVID-19-Dashboard', '_blank')">Github</button>
+                        </div>
+                    </div>
+                    <div class="details-container p-8 border-2 border-gray-400 rounded-3xl text-center flex flex-col justify-between">
+                        <div>
+                            <img src="./assets/Customer Churn Prediction.png" alt="Customer Churn Prediction" class="rounded-3xl mb-6 w-full"/>
+                            <h2 class="text-3xl font-semibold mb-6">Customer Churn Prediction</h2>
+                        </div>
+                        <div class="flex justify-center gap-4">
+                             <button class="btn font-semibold py-3 px-6 rounded-full border-2 border-black hover:bg-black hover:text-white transition-all" onclick="window.open('https://github.com/Ivin410/churn-dashboard', '_blank')">Github</button>
+                        </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-container py-20 px-8">
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="text-gray-500">Get in Touch</p>
+                <h1 class="text-5xl font-bold my-4">Contact Me</h1>
+                <div class="contact-info-upper-container flex justify-center items-center gap-4 p-6 border-2 border-gray-400 rounded-3xl mt-8">
+                    <div class="flex items-center gap-2">
+                        <img src="https://img.icons8.com/ios-filled/50/a0a0a0/new-post.png" alt="Email icon" class="h-8 w-8"/>
+                        <p><a href="mailto:Ivinthott01@gmail.com">Ivinthott01@gmail.com</a></p>
+                    </div>
+                     <div class="flex items-center gap-2">
+                        <img src="https://img.icons8.com/ios-filled/50/a0a0a0/linkedin.png" alt="LinkedIn icon" class="h-8 w-8"/>
+                        <p><a href="https://www.linkedin.com/in/ivin-varghese-george-aa0740363" target="_blank">LinkedIn</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white dark:bg-[#121212] py-10">
+        <div class="max-w-7xl mx-auto px-8">
+            <nav>
+                <ul class="flex justify-center gap-8 text-lg">
+                    <li><a href="#about" class="hover:text-gray-500 hover:underline underline-offset-4">About</a></li>
+                    <li><a href="#skills" class="hover:text-gray-500 hover:underline underline-offset-4">Skills</a></li>
+                    <li><a href="#projects" class="hover:text-gray-500 hover:underline underline-offset-4">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-gray-500 hover:underline underline-offset-4">Contact</a></li>
+                </ul>
+            </nav>
+            <p class="text-center text-gray-500 mt-8">Copyright &#169; 2025 Ivin Varghese George. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector(".menu-links");
+            const icon = document.querySelector(".hamburger-icon");
+            menu.classList.toggle("max-h-96");
+            icon.classList.toggle("open");
+        }
+
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>
+
